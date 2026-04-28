@@ -1,6 +1,38 @@
 :root{
     --acent-color: #2752E7;
     --text-color: #050E2C;
+    --bg-color: #F8F9FF;
+    --card-bg: #FFFFFF;
+    --border-color: #E3E3E3;
+    --text-muted: #626262;
+    --hobby-bg: #F8F9FF;
+    --project-card-bg: #F8F9FF;
+    --input-bg: #FFFFFF;
+    --skill-meter-bg: rgb(218, 217, 217);
+    --shadow: rgba(0,0,0,0.1);
+    --job-title-color: #4517B4;
+    --skillname-bg: #4517B4;
+    --tag-bg: #E8FAFE;
+    --img-placeholder: #D0DBFF;
+}
+
+/* Dark theme variables */
+.profile-card.dark-mode{
+    --acent-color: #5B7EF5;
+    --text-color: #E8EAF6;
+    --bg-color: #0F172A;
+    --card-bg: #1E293B;
+    --border-color: #334155;
+    --text-muted: #94A3B8;
+    --hobby-bg: #1E293B;
+    --project-card-bg: #0F172A;
+    --input-bg: #1E293B;
+    --skill-meter-bg: #334155;
+    --shadow: rgba(0,0,0,0.3);
+    --job-title-color: #8B7FF5;
+    --skillname-bg: #5B7EF5;
+    --tag-bg: #1E293B;
+    --img-placeholder: #334155;
 }
 
 *{
@@ -11,22 +43,54 @@
 
 body{
     font-family: 'Segoe UI', sans-serif;
-    background: #F8F9FF;
+    background: var(--bg-color);
     padding: 20px;
+    transition: background .3s ease;
 }
 
-/* ===== MAIN WRAPPER ===== */
+/* MAIN WRAPPER */
 .profile-card{
     max-width: 1200px;
     margin: 40px auto;
-    background: white;
+    background: var(--card-bg);
     border-radius: 12px;
     padding: 30px;
     text-align: center;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px var(--shadow);
+    position: relative;
+    transition: all .3s ease;
 }
 
-/* ===== PROFILE SECTION ===== */
+/* THEME TOGGLE BUTTON */
+.theme-toggle{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: var(--hobby-bg);
+    border: 1px solid var(--border-color);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all .3s ease;
+    z-index: 10;
+}
+
+.theme-toggle:hover{
+    transform: rotate(20deg);
+    border-color: var(--acent-color);
+}
+
+.theme-toggle i{
+    font-size: 18px;
+    color: var(--text-color);
+    transition: all .3s ease;
+}
+
+/*  PROFILE SECTION */
 .profile-image img{
     width: 120px;
     height: 120px;
@@ -39,26 +103,26 @@ body{
 .user-name {
     margin: 12px 0 4px;
     font-size: 22px;
-    color: #1a1a2e;
+    color: var(--text-color);
 }
   
 .job-title {
     margin: 0 0 12px;
-    color: #4517B4;
+    color: var(--job-title-color);
     font-weight: 600;
     font-size: 14px;
 }
   
 .bio {
     margin: 0 auto 16px;
-    color: #555;
+    color: var(--text-muted);
     font-size: 14px;
     line-height: 1.5;
     max-width: 400px;
 }
 
 .my-des{
-    border-bottom: 2px solid rgb(85, 86, 85);
+    border-bottom: 2px solid var(--border-color);
     padding-bottom: 16px;
     margin-bottom: 16px;
     max-width: 400px;
@@ -73,7 +137,7 @@ body{
 
 .hobbies h4{
     font-size: 13px;
-    color: #1a1a2e;
+    color: var(--text-color);
     margin-bottom: 10px;
     text-transform: uppercase;
     letter-spacing: 0.5px;
@@ -88,15 +152,14 @@ body{
 }
 
 .hobbi button{
-    background: #F8F9FF;
-    border: 1px solid #E3E3E3;
+    background: var(--hobby-bg);
+    border: 1px solid var(--border-color);
     padding: 5px 12px;
     border-radius: 16px;
     font-size: 12px;
     color: var(--text-color);
     cursor: default;
 }
-
 .social-links{
     display: flex;
     gap: 8px;
@@ -106,7 +169,7 @@ body{
 }
 
 .social-links button{
-    background-color: #4517B4;
+    background-color: var(--skillname-bg);
     border: none;
     padding: 8px 12px;
     border-radius: 6px;
@@ -116,6 +179,10 @@ body{
 
 .social-links button:hover{
     background-color: #3a1399;
+}
+
+.profile-card.dark-mode .social-links button:hover{
+    background-color: #4A6BD8;
 }
 
 .social-links button a{
@@ -132,7 +199,7 @@ body{
     font-size: 14px;
 }
 
-/* ===== SKILLS SECTION ===== */
+/*  SKILLS SECTION */
 .skills-section{
     max-width: 400px;
     margin: 0 auto 40px;
@@ -144,7 +211,7 @@ body{
 
 .skill-list h3{
     margin-bottom: 16px;
-    color: #1a1a2e;
+    color: var(--text-color);
     font-size: 16px;
     text-align: center;
 }
@@ -163,7 +230,7 @@ body{
 }
 
 .skillname{
-    background-color: #4517B4;
+    background-color: var(--skillname-bg);
     display: inline-block;
     font-size: 13px;
     color: #ffffff;
@@ -177,7 +244,7 @@ body{
     width: 100%;
     height: 10px;
     position: relative;
-    background: rgb(218, 217, 217);
+    background: var(--skill-meter-bg);
     border-radius: 20px;
 }
 
@@ -195,16 +262,16 @@ body{
     right: 0;
     top: -22px;
     font-size: 12px;
-    color: #1a1a2e;
+    color: var(--text-color);
     font-weight: 600;
 }
 
-/* ===== PROJECTS SECTION ===== */
+/*  PROJECTS SECTION */
 .projects{
     background: transparent;
     padding: 40px 0 0;
     width: 100%;
-    border-top: 2px solid #E3E3E3;
+    border-top: 2px solid var(--border-color);
     margin-top: 30px;
 }
 .projects-container{
@@ -221,7 +288,7 @@ body{
     margin-bottom: 8px;
 }
 .hey{
-    color: #626262;
+    color: var(--text-muted);
     font-size: 14px;
 }
 .project-filters{
@@ -232,8 +299,8 @@ body{
     flex-wrap: wrap;
 }
 .filter-btn{
-    background: #F8F9FF;
-    border: 1px solid #E3E3E3;
+    background: var(--hobby-bg);
+    border: 1px solid var(--border-color);
     padding: 8px 16px;
     border-radius: 8px;
     cursor: pointer;
@@ -253,10 +320,11 @@ body{
     gap: 20px;
 }
 .project-card{
-    background: #F8F9FF;
+    background: var(--project-card-bg);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     overflow: hidden;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+    box-shadow: 0 2px 8px var(--shadow);
     transition: transform .2s ease;
     display: flex;
     flex-direction: column;
@@ -269,7 +337,7 @@ body{
     width: 100%;
     height: 160px;
     object-fit: cover;
-    background: #D0DBFF;
+    background: var(--img-placeholder);
 }
 .project-content{
     padding: 20px;
@@ -284,22 +352,23 @@ body{
     flex-wrap: wrap;
 }
 .tag{
-    background: #E8FAFE;
+    background: var(--tag-bg);
     color: var(--acent-color);
     font-size: 11px;
     padding: 3px 8px;
     border-radius: 16px;
     font-weight: 500;
+    border: 1px solid var(--border-color);
 }
 .project-title{
     font-size: 18px;
     font-weight: 700;
-    color: #050E2C;
+    color: var(--text-color);
     margin-bottom: 6px;
 }
 .project-desc{
     font-size: 13px;
-    color: #626262;
+    color: var(--text-muted);
     line-height: 140%;
     margin-bottom: 16px;
     flex: 1;
@@ -327,21 +396,21 @@ body{
     background: #1e40c8;
 }
 .btn-code{
-    background: #FFFFFF;
+    background: var(--input-bg);
     color: var(--text-color);
-    border: 1px solid #E3E3E3;
+    border: 1px solid var(--border-color);
 }
 .btn-code:hover{
     border-color: var(--acent-color);
     color: var(--acent-color);
 }
 
-/* ===== CONTACT SECTION ===== */
+/*  CONTACT SECTION  */
 .contact{
     background: transparent;
     padding: 40px 0 20px;
     width: 100%;
-    border-top: 2px solid #E3E3E3;
+    border-top: 2px solid var(--border-color);
     margin-top: 40px;
 }
 .contact-container{
@@ -361,8 +430,8 @@ body{
     align-items: center;
     gap: 14px;
     padding: 16px 20px;
-    background: #F8F9FF;
-    border: 1px solid #E3E3E3;
+    background: var(--hobby-bg);
+    border: 1px solid var(--border-color);
     border-radius: 12px;
     text-decoration: none;
     transition: all .2s ease;
@@ -373,6 +442,10 @@ body{
     border-color: var(--acent-color);
     transform: translateY(-2px);
     box-shadow: 0 4px 12px rgba(39, 82, 231, 0.1);
+}
+
+.profile-card.dark-mode .contact-option:hover{
+    box-shadow: 0 4px 12px rgba(91, 126, 245, 0.2);
 }
 
 .contact-option i{
@@ -395,7 +468,7 @@ body{
 .option-title{
     display: block;
     font-size: 13px;
-    color: #626262;
+    color: var(--text-muted);
     font-weight: 500;
 }
 
@@ -408,7 +481,7 @@ body{
 
 .form-divider{
     text-align: center;
-    color: #626262;
+    color: var(--text-muted);
     font-size: 14px;
     margin: 30px 0 20px;
     position: relative;
@@ -421,7 +494,7 @@ body{
     top: 50%;
     width: 40%;
     height: 1px;
-    background: #E3E3E3;
+    background: var(--border-color);
 }
 
 .form-divider::before{
@@ -453,11 +526,13 @@ body{
 .form-group textarea{
     width: 100%;
     padding: 12px 14px;
-    border: 1px solid #E3E3E3;
+    border: 1px solid var(--border-color);
     border-radius: 8px;
     font-family: inherit;
     font-size: 14px;
     color: var(--text-color);
+    background: var(--input-bg);
+    transition: all .3s ease;
 }
 .form-group input:focus,
 .form-group textarea:focus{
@@ -519,11 +594,21 @@ body{
     border: 1px solid #B8F5FF;
     display: block;
 }
+.profile-card.dark-mode .form-message.success{
+    background: #1E3A3A;
+    color: #5EEAD4;
+    border: 1px solid #134E4A;
+}
 .form-message.error{
     background: #FFF1F1;
     color: #C91C1C;
     border: 1px solid #FFD4D4;
     display: block;
+}
+.profile-card.dark-mode .form-message.error{
+    background: #3A1E1E;
+    color: #FCA5A5;
+    border: 1px solid #7F1D1D;
 }
 
 @media screen and (max-width: 678px){
@@ -533,6 +618,12 @@ body{
     .profile-card{
         padding: 20px;
         margin: 20px auto;
+    }
+    .theme-toggle{
+        top: 15px;
+        right: 15px;
+        width: 36px;
+        height: 36px;
     }
     .projects-grid{
         grid-template-columns: 1fr;

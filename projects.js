@@ -81,3 +81,30 @@ filterBtns.forEach((btn) => {
 
 // INITIAL LOAD
 document.addEventListener("DOMContentLoaded", () => renderProjects());
+
+
+
+// THEME TOGGLE
+const themeToggle = document.getElementById('themeToggle');
+const profileCard = document.querySelector('.profile-card');
+const themeIcon = themeToggle.querySelector('i');
+
+// Check for saved theme preference or default to light
+const currentTheme = localStorage.getItem('theme') || 'light';
+if (currentTheme === 'dark') {
+    profileCard.classList.add('dark-mode');
+    themeIcon.classList.replace('fa-moon', 'fa-sun');
+}
+
+themeToggle.addEventListener('click', () => {
+    profileCard.classList.toggle('dark-mode');
+    
+    // Update icon
+    if (profileCard.classList.contains('dark-mode')) {
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        localStorage.setItem('theme', 'dark');
+    } else {
+        themeIcon.classList.replace('fa-sun', 'fa-moon');
+        localStorage.setItem('theme', 'light');
+    }
+});
