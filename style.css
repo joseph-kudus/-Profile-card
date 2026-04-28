@@ -4,30 +4,22 @@
     box-sizing: border-box;
 }
 
-main{
-    background-color: darkgrey;
-    width: 450px;
-    display: block;
-    height: 450px;
-    border: 1px solid red;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-}
-
-main .profile-card{
-    max-width: 200px;
-    max-height: 200px;
-    
-justify-content: center;
-align-items: center;
+.profile-card{
+   
+        max-width: 320px;
+        margin: 40px auto;
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        text-align: center;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        font-family: 'Segoe UI', sans-serif;      
 
 }
 .profile-image img{
     
-    width: 100px;
-    height: 100px;
+    width: 120px;
+    height: 120px;
     justify-content: center;
     align-items: center;
     border: 5px solid blue;
@@ -36,8 +28,27 @@ align-items: center;
     padding: 5px;
     
 }
+user-name {
+    margin: 0 0 4px;
+    font-size: 22px;
+    color: #1a1a2e;
+  }
+  
+  .job-title {
+    margin: 0 0 12px;
+    color: #4517B4;
+    font-weight: 600;
+    font-size: 14px;
+  }
+  
+  .bio {
+    margin: 0;
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+  }
 .my-des{
-border-bottom: 1px solid rgb(85, 86, 85);
+border-bottom: 2px solid rgb(85, 86, 85);
 }
 .social-links button{
     max-width: 90px;
