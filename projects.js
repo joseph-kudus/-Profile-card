@@ -3,37 +3,37 @@ const projects = [
     title: "DevX Project",
     desc: "Developer tools platform with code snippets, API testing, and team collaboration. Built for productivity.",
     img: "assets/projects/devx.png",
-    tags: ["web", "api"],
+    tags: ["HTML", "CSS"],
     tech: ["React", "Node.js", "MongoDB"],
-    live: "https://devx-demo.com", // replace with your link
-    code: "https://github.com/yourusername/devx", // replace with your repo
+    live: "https://devx-demo.com",
+    code: "https://github.com/yourusername/devx",
   },
   {
-    title: "CryptoProject",
-    desc: "Crypto exchange dashboard with real-time prices, portfolio tracking, and trading charts using CoinGecko API.",
+    title: "CryptoZ Project",
+    desc: "Crypto exchange dashboard with real-time prices, portfolio tracking, and trading charts using Currency converter API.",
     img: "assets/projects/crypto.png",
     tags: ["web", "api"],
-    tech: ["JavaScript", "Chart.js", "API"],
-    live: "https://joseph-cryptoz-project.netlify.app/", 
-    code: "https://github.com/yourusername/cryptoproject", 
+    tech: ["HTML", "CSS", "JavaScript", "Currency Converter API"],
+    live: "https://joseph-cryptoz-project.netlify.app/",
+    code: "https://github.com/yourusername/cryptoproject",
   },
   {
     title: "Expenses Tracker",
     desc: "Personal finance app to track income/expenses. Category filters, monthly reports, and data export to CSV.",
     img: "assets/projects/expenses.png",
     tags: ["web"],
-    tech: ["HTML", "CSS", "JavaScript", "LocalStorage"],
-    live: "https://expenses-demo.com", // replace
-    code: "https://github.com/yourusername/expenses-tracker", // replace
+    tech: ["HTML", "CSS", "JavaScript"],
+    live: "https://expenses-demo.com",
+    code: "https://github.com/yourusername/expenses-tracker",
   },
   {
     title: "Learning Management System",
     desc: "Full LMS for courses, quizzes, and student progress. Admin dashboard, auth, and video streaming support.",
     img: "assets/projects/lms.png",
     tags: ["web"],
-    tech: ["PHP", "MySQL", "Bootstrap"],
-    live: "https://jllearnflow.netlify.app/#/Landing", // leave blank if no live demo
-    code: "https://github.com/yourusername/lms", // replace
+    tech: ["React", "Node Js", "CSS"],
+    live: "https://jllearnflow.netlify.app/#/Landing",
+    code: "https://github.com/yourusername/lms",
   },
 ];
 
