@@ -3,13 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Profile Card Project Extension</title>
+    <title>Joseph Lukudu - Portfolio</title>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
   <body>
     <div class="profile-card">
+      <!-- PROFILE SECTION -->
       <div class="profile-image">
-        <img src="/images/20250821_160921.jpg" alt="" />
+        <img src="/images/20250821_160921.jpg" alt="Joseph Lukudu" />
       </div>
       <div class="my-des">
         <h2 class="user-name">Joseph Lukudu</h2>
@@ -26,12 +28,13 @@
         <div class="hobbi">
           <button>Coding</button>
           <button>Reading</button>
-          <button>Basket ball</button>
+          <button>Basketball</button>
         </div>
         <div class="social-links">
-          <button><a href="https://github.com/joseph-kudus">Github</a></button>
-          <button><a href="#" target="_top">Linkedin</a></button>
-          <button><a href="#" target="_parent">FaceBook</a></button>
+          <button><a href="https://github.com/joseph-kudus" target="_blank"><i class="fab fa-github"></i> Github</a></button>
+          <button><a href="https://wa.me/256781880984" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp</a></button>
+          <button><a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></button>
+          <button><a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></button>
         </div>
       </div>
       <div class="skills-section">
@@ -43,9 +46,7 @@
                 <div class="skill-contaiiner">
                   <div class="skillname">HTML</div>
                   <div class="meter">
-                    <span style="width: 80%"
-                      ><span class="skillLevel">80%</span></span
-                    >
+                    <span style="width: 80%"><span class="skillLevel">80%</span></span>
                   </div>
                 </div>
               </div>
@@ -55,9 +56,7 @@
                 <div class="skill-contaiiner">
                   <div class="skillname">CSS</div>
                   <div class="meter">
-                    <span style="width: 70%"
-                      ><span class="skillLevel">70%</span></span
-                    >
+                    <span style="width: 70%"><span class="skillLevel">70%</span></span>
                   </div>
                 </div>
               </div>
@@ -67,9 +66,7 @@
                 <div class="skill-contaiiner">
                   <div class="skillname">JavaScript</div>
                   <div class="meter">
-                    <span style="width: 60%"
-                      ><span class="skillLevel">60%</span></span
-                    >
+                    <span style="width: 60%"><span class="skillLevel">60%</span></span>
                   </div>
                 </div>
               </div>
@@ -79,9 +76,7 @@
                 <div class="skill-contaiiner">
                   <div class="skillname">React</div>
                   <div class="meter">
-                    <span style="width: 50%"
-                      ><span class="skillLevel">50%</span></span
-                    >
+                    <span style="width: 50%"><span class="skillLevel">50%</span></span>
                   </div>
                 </div>
               </div>
@@ -89,6 +84,7 @@
           </ol>
         </div>
       </div>
+
       <!-- PROJECTS SECTION -->
       <section class="projects" id="Projects">
         <div class="projects-container">
@@ -100,7 +96,6 @@
           <div class="project-filters">
             <button class="filter-btn active" data-filter="all">All</button>
             <button class="filter-btn" data-filter="web">Web Apps</button>
-            <button class="filter-btn" data-filter="mobile">Mobile</button>
             <button class="filter-btn" data-filter="api">API</button>
           </div>
 
@@ -109,35 +104,68 @@
           </div>
         </div>
       </section>
+
       <!-- CONTACT SECTION -->
-<section class="contact" id="Contact">
-    <div class="contact-container">
-        <div class="card-heading">
+      <section class="contact" id="Contact">
+        <div class="contact-container">
+          <div class="card-heading">
             <h1 class="card-heading-h1">Get In Touch</h1>
             <p class="hey">Have a project in mind? Send me a message</p>
-        </div>
+          </div>
 
-        <form class="contact-form" id="contactForm">
+          <div class="contact-options">
+            <a href="https://wa.me/256781880984" target="_blank" class="contact-option whatsapp">
+              <i class="fab fa-whatsapp"></i>
+              <div>
+                <span class="option-title">WhatsApp Me</span>
+                <span class="option-text">+256 781 880 984</span>
+              </div>
+            </a>
+            <a href="tel:+256781880984" class="contact-option call">
+              <i class="fas fa-phone"></i>
+              <div>
+                <span class="option-title">Call Me</span>
+                <span class="option-text">+256 781 880 984</span>
+              </div>
+            </a>
+            <a href="mailto:josephlukudu@gmail.com" class="contact-option email">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <span class="option-title">Email Me</span>
+                <span class="option-text">josephlukudu@gmail.com</span>
+              </div>
+            </a>
+          </div>
+
+          <div class="form-divider">or send a message below</div>
+
+          <form class="contact-form" id="contactForm">
             <div class="form-group">
-                <label for="name">Your Name</label>
-                <input type="text" id="name" name="name" placeholder="John Doe" required>
+              <label for="name">Your Name</label>
+              <input type="text" id="name" name="name" placeholder="John Doe" required>
             </div>
             
             <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+              <label for="email">Your Email</label>
+              <input type="email" id="email" name="email" placeholder="john@example.com" required>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
             </div>
 
             <button type="submit" class="contact-btn" id="submitBtn">
-                <span class="btn-text">Send Message</span>
-                <span class="btn-loader"></span>
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loader"></span>
             </button>
 
             <div class="form-message" id="formMessage"></div>
-        </form>
+          </form>
+        </div>
+      </section>
     </div>
-</section>
-    </div>
+
     <script src="projects.js"></script>
     <script src="contact.js"></script>
   </body>

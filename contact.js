@@ -2,42 +2,60 @@ const contactForm = document.getElementById("contactForm");
 const submitBtn = document.getElementById("submitBtn");
 const formMessage = document.getElementById("formMessage");
 
+// REPLACE THIS WITH YOUR FORMSPREE URL
+const FORMSPREE_URL = "https://formspree.io/f/xpzgkqdo";
+
 contactForm.addEventListener("submit", async (e) => {
   e.preventDefault();
 
-  // Get form data
   const name = document.getElementById("name").value.trim();
   const message = document.getElementById("message").value.trim();
 
-  // Basic validation
   if (!name || !message) {
     showMessage("Please fill in all fields", "error");
     return;
   }
 
-  // Show loading state
   submitBtn.classList.add("loading");
   submitBtn.disabled = true;
   formMessage.style.display = "none";
 
-  // Simulate sending - replace this with real API later
-  await new Promise((resolve) => setTimeout(resolve, 1500));
+  try {
+    const response = await fetch(FORMSPREE_URL, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify({
+        name: name,
+        message: message,
+        _subject: `Portfolio Contact from ${name}`,
+      }),
+    });
 
-  // Success
-  showMessage(
-    `Thanks ${name}! Your message has been sent. I'll reply soon.`,
-    "success",
-  );
-  contactForm.reset();
+    if (response.ok) {
+      showMessage(
+        `Thanks ${name}! Your message has been sent. I'll reply soon.`,
+        "success",
+      );
+      contactForm.reset();
+    } else {
+      throw new Error("Network response was not ok");
+    }
+  } catch (error) {
+    showMessage(
+      "Oops! Something went wrong. Please try again or email me directly.",
+      "error",
+    );
+  } finally {
+    submitBtn.classList.remove("loading");
+    submitBtn.disabled = false;
 
-  // Reset button
-  submitBtn.classList.remove("loading");
-  submitBtn.disabled = false;
-
-  // Hide message after 5s
-  setTimeout(() => {
-    formMessage.style.display = "none";
-  }, 5000);
+    setTimeout(() => {
+      formMessage.style.display = "none";
+    }, 5000);
+  }
 });
 
 function showMessage(text, type) {
