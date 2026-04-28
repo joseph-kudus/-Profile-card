@@ -89,6 +89,56 @@
           </ol>
         </div>
       </div>
+      <!-- PROJECTS SECTION -->
+      <section class="projects" id="Projects">
+        <div class="projects-container">
+          <div class="card-heading">
+            <h1 class="card-heading-h1">Projects I've Built</h1>
+            <p class="hey">Some of the apps and websites I've shipped so far</p>
+          </div>
+
+          <div class="project-filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="web">Web Apps</button>
+            <button class="filter-btn" data-filter="mobile">Mobile</button>
+            <button class="filter-btn" data-filter="api">API</button>
+          </div>
+
+          <div class="projects-grid" id="projectsGrid">
+            <!-- Projects injected by JS -->
+          </div>
+        </div>
+      </section>
+      <!-- CONTACT SECTION -->
+<section class="contact" id="Contact">
+    <div class="contact-container">
+        <div class="card-heading">
+            <h1 class="card-heading-h1">Get In Touch</h1>
+            <p class="hey">Have a project in mind? Send me a message</p>
+        </div>
+
+        <form class="contact-form" id="contactForm">
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" name="name" placeholder="John Doe" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
+            </div>
+
+            <button type="submit" class="contact-btn" id="submitBtn">
+                <span class="btn-text">Send Message</span>
+                <span class="btn-loader"></span>
+            </button>
+
+            <div class="form-message" id="formMessage"></div>
+        </form>
     </div>
+</section>
+    </div>
+    <script src="projects.js"></script>
+    <script src="contact.js"></script>
   </body>
 </html>
