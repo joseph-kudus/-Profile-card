@@ -3,8 +3,8 @@ const projects = [
     title: "DevX Project",
     desc: "Developer tools platform with code snippets, API testing, and team collaboration. Built for productivity.",
     img: "assets/projects/devx.png",
-    tags: ["HTML", "CSS"],
-    tech: ["React", "Node.js", "MongoDB"],
+    tags: ["web"],
+    tech: ["HTML", "CSS"],
     live: "https://devx-demo.com",
     code: "https://github.com/yourusername/devx",
   },
@@ -27,21 +27,28 @@ const projects = [
     code: "https://github.com/yourusername/expenses-tracker",
   },
   {
-    title: "Learning Management System",
-    desc: "Full LMS for courses, quizzes, and student progress. Admin dashboard, auth, and video streaming support.",
+    title: "Chat Application",
+    desc: "a chat feature people used for engagement.",
+    img: "assets/projects/chat.png",
+    tags: ["app"],
+    tech: ["React"],
+    live: "#",
+    code: "#",
+  },
+  {
+    title: "LearnFlow Management System",
+    desc: "LearnFlow is a learning system that allows students to see their courses, track progress, and explore new learning opportunities.",
     img: "assets/projects/lms.png",
-    tags: ["web"],
-    tech: ["React", "Node Js", "CSS"],
+    tags: ["web", "app"],
+    tech: ["HTML", "CSS", "JavaScript","React Js"],
     live: "https://jllearnflow.netlify.app/#/Landing",
     code: "https://github.com/yourusername/lms",
   },
 ];
 
 // RENDER PROJECTS
-const projectsGrid = document.getElementById("projectsGrid");
-const filterBtns = document.querySelectorAll(".filter-btn");
-
 function renderProjects(filter = "all") {
+  const projectsGrid = document.getElementById("projectsGrid");
   projectsGrid.innerHTML = "";
 
   const filtered =
@@ -51,38 +58,52 @@ function renderProjects(filter = "all") {
 
   filtered.forEach((project) => {
     const card = `
-            <div class="project-card" data-category="${project.tags.join(" ")}">
-                <img src="${project.img}" alt="${project.title}" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/D0DBFF/2752E7?text=${project.title.replace(/ /g, "+")}'">
-                <div class="project-content">
-                    <div class="project-tags">
-                        ${project.tech.map((t) => `<span class="tag">${t}</span>`).join("")}
-                    </div>
-                    <h3 class="project-title">${project.title}</h3>
-                    <p class="project-desc">${project.desc}</p>
-                    <div class="project-links">
-                        ${project.live ? `<a href="${project.live}" target="_blank" class="project-btn btn-live">Live Demo</a>` : ""}
-                        ${project.code ? `<a href="${project.code}" target="_blank" class="project-btn btn-code"><i class="fab fa-github"></i> Code</a>` : ""}
-                    </div>
-                </div>
-            </div>
-        `;
+      <div class="project-card" data-category="${project.tags.join(" ")}">
+        <img src="${project.img}" alt="${project.title}" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/D0DBFF/2752E7?text=${project.title.replace(/ /g, "+")}'">
+        <div class="project-content">
+          <div class="project-tags">
+            ${project.tech.map((t) => `<span class="tag">${t}</span>`).join("")}
+          </div>
+          <h3 class="project-title">${project.title}</h3>
+          <p class="project-desc">${project.desc}</p>
+          <div class="project-links">
+            ${project.live ? `<a href="${project.live}" target="_blank" class="project-btn btn-live">Live Demo</a>` : ""}
+            ${project.code ? `<a href="${project.code}" target="_blank" class="project-btn btn-code"><i class="fab fa-github"></i> Code</a>` : ""}
+          </div>
+        </div>
+      </div>
+    `;
     projectsGrid.insertAdjacentHTML("beforeend", card);
   });
 }
 
-// FILTER LOGIC
-filterBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    filterBtns.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderProjects(btn.dataset.filter);
+// RENDER FILTERS DYNAMICALLY
+function renderFilters() {
+  const allTags = [...new Set(projects.flatMap(p => p.tags))];
+  const filterContainer = document.querySelector('.project-filters');
+  
+  filterContainer.innerHTML = `
+    <button class="filter-btn active" data-filter="all">All</button>
+    ${allTags.map(tag => `
+      <button class="filter-btn" data-filter="${tag}">${tag.charAt(0).toUpperCase() + tag.slice(1)}</button>
+    `).join('')}
+  `;
+  
+  // Re-attach event listeners
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProjects(btn.dataset.filter);
+    });
   });
-});
+}
 
 // INITIAL LOAD
-document.addEventListener("DOMContentLoaded", () => renderProjects());
-
-
+document.addEventListener("DOMContentLoaded", () => {
+  renderFilters();
+  renderProjects();
+});
 
 // THEME TOGGLE
 const themeToggle = document.getElementById('themeToggle');
@@ -108,3 +129,22 @@ themeToggle.addEventListener('click', () => {
         localStorage.setItem('theme', 'light');
     }
 });
+
+
+// HIRE ME TOGGLE
+const hireMeBtn = document.getElementById('hireMeBtn');
+const hireMeText = document.getElementById('hireMeText');
+
+if (hireMeBtn && hireMeText) {
+    hireMeBtn.addEventListener('click', () => {
+        hireMeText.classList.toggle('active');
+        
+        // Change button text/icon when active
+        const icon = hireMeBtn.querySelector('i');
+        if (hireMeText.classList.contains('active')) {
+            hireMeBtn.innerHTML = '<i class="fas fa-times"></i> Close';
+        } else {
+            hireMeBtn.innerHTML = '<i class="fas fa-briefcase"></i> Hire Me';
+        }
+    });
+}

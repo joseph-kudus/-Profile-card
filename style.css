@@ -636,3 +636,82 @@ body{
         width: 30%;
     }
 }
+
+
+
+/* HIRE ME TOGGLE */
+.hire-me-wrapper {
+    margin: 20px auto;
+    max-width: 400px;
+}
+
+.hire-me-btn {
+    background: var(--acent-color);
+    color: #FFFFFF;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all .3s ease;
+}
+
+.hire-me-btn:hover {
+    background: #1e40c8;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(39, 82, 231, 0.3);
+}
+
+.hire-me-btn i {
+    font-size: 16px;
+}
+
+.hire-me-text {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .4s ease, padding .4s ease;
+    background: var(--hobby-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-top: 0;
+    padding: 0 16px;
+}
+
+.hire-me-text.active {
+    max-height: 200px;
+    padding: 16px;
+    margin-top: 12px;
+}
+
+.hire-me-text p {
+    color: var(--text-color);
+    font-size: 14px;
+    margin: 0 0 8px;
+    line-height: 1.5;
+}
+
+.hire-me-text p:last-of-type {
+    margin-bottom: 12px;
+}
+
+.hire-me-cta {
+    display: inline-block;
+    background: var(--acent-color);
+    color: #FFFFFF;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: background .2s ease;
+}
+
+.hire-me-cta:hover {
+    background: #1e40c8;
+}
