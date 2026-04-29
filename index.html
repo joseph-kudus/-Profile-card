@@ -1,193 +1,84 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Joseph Lukudu - Portfolio</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  </head>
-  <body>
-    
-      <!-- PROFILE SECTION -->
-      <div class="profile-card">
-        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
-          <i class="fas fa-moon"></i>
-        </button>
-    
-      <div class="profile-image">
-        <img src="/images/20250821_160921.jpg" alt="Joseph Lukudu" />
-      </div>
-      <div class="my-des">
-        <h2 class="user-name">Joseph Lukudu</h2>
-        <p class="job-title">Aspiring Developer (Fullstack Developer)</p>
-      </div>
-      <div class="bio">
-        <p>
-          Hi, my name is Joseph, I am learning web development and building
-          projects step by step.
-        </p>
-      </div>
-      <div class="hobbies">
-        <h4>HOBBIES</h4>
-        <div class="hobbi">
-          <button>Coding</button>
-          <button>Reading</button>
-          <button>Basketball</button>
-        </div>
-        <div class="social-links">
-          <button><a href="https://github.com/joseph-kudus" target="_blank"><i class="fab fa-github"></i> Github</a></button>
-          <button><a href="#" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></button>
-          <button><a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a></button>
-        </div>
 
-      </div>
-      <div class="hire-me-wrapper">
-        <button id="hireMeBtn" class="hire-me-btn">
-          <i class="fas fa-briefcase"></i> Say Hello
-        </button>
-        <div id="hireMeText" class="hire-me-text">
-          <p>Thanks for visiting my page</p>
-          <p>I'm available for freelance work!</p>
-          
-          <a href="https://wa.me/256773409907?text=Hi%20Joseph,%20I%20saw%20your%20portfolio%20and%20want%20to%20hire%20you!"
-            target="_blank" class="hire-me-cta">
-            <i class="fab fa-whatsapp"></i> Message Me on WhatsApp
-          </a>
-        </div>
-      </div>
-      <div class="skills-section">
-        <div class="skill-list">
-          <h3>Skills section</h3>
-          <ol>
-            <li>
-              <div class="skill-wraper">
-                <div class="skill-contaiiner">
-                  <div class="skillname">HTML</div>
-                  <div class="meter">
-                    <span style="width: 80%"><span class="skillLevel">80%</span></span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="skill-wraper">
-                <div class="skill-contaiiner">
-                  <div class="skillname">CSS</div>
-                  <div class="meter">
-                    <span style="width: 70%"><span class="skillLevel">70%</span></span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="skill-wraper">
-                <div class="skill-contaiiner">
-                  <div class="skillname">JavaScript</div>
-                  <div class="meter">
-                    <span style="width: 60%"><span class="skillLevel">60%</span></span>
-                  </div>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="skill-wraper">
-                <div class="skill-contaiiner">
-                  <div class="skillname">React</div>
-                  <div class="meter">
-                    <span style="width: 50%"><span class="skillLevel">50%</span></span>
-                  </div>
-                </div>
-              </div>
-            </li>
-          </ol>
-        </div>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Joseph Lukudu - Profile Card</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
 
-      <!-- PROJECTS SECTION -->
-      <section class="projects" id="Projects">
-        <div class="projects-container">
-          <div class="card-heading">
-            <h1 class="card-heading-h1">Projects I've Built</h1>
-            <p class="hey">Some of the apps and websites I've shipped so far</p>
-            <p>A step-by-step curriculum</p>
-          </div>
+<body>
+  <div class="profile-card">
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+      <i class="fas fa-moon"></i>
+    </button>
 
-          <div class="project-filters">
-            <button class="filter-btn active" data-filter="all">All</button>
-            <button class="filter-btn" data-filter="web">Web Apps</button>
-            <button class="filter-btn" data-filter="web">Apps</button>
-            <button class="filter-btn" data-filter="api">API</button>
-          </div>
-
-          <div class="projects-grid" id="projectsGrid">
-            <!-- Projects injected by JS -->
-          </div>
-        </div>
-      </section>
-
-      <!-- CONTACT SECTION -->
-      <section class="contact" id="Contact">
-        <div class="contact-container">
-          <div class="card-heading">
-            <h1 class="card-heading-h1">Get In Touch</h1>
-            <p class="hey">Have a project in mind? Send me a message</p>
-          </div>
-
-          <div class="contact-options">
-            <a href="https://wa.me/256781880984" target="_blank" class="contact-option whatsapp">
-              <i class="fab fa-whatsapp"></i>
-              <div>
-                <span class="option-title">WhatsApp Me</span>
-                <span class="option-text">+256 781 880 984</span>
-              </div>
-            </a>
-            <a href="tel:+256781880984" class="contact-option call">
-              <i class="fas fa-phone"></i>
-              <div>
-                <span class="option-title">Call Me</span>
-                <span class="option-text">+256 781 880 984</span>
-              </div>
-            </a>
-            <a href="mailto:josephlukudu22@gmail.com" class="contact-option email">
-              <i class="fas fa-envelope"></i>
-              <div>
-                <span class="option-title">Email Me</span>
-                <span class="option-text">josephlukudu22@gmail.com</span>
-              </div>
-            </a>
-          </div>
-
-          <div class="form-divider">or send a message below</div>
-
-          <form class="contact-form" id="contactForm">
-            <div class="form-group">
-              <label for="name">Your Name</label>
-              <input type="text" id="name" name="name" placeholder="Your Name" required>
-            </div>
-            
-            <div class="form-group">
-              <label for="email">Your Email</label>
-              <input type="email" id="email" name="email" placeholder="Your email" required>
-            </div>
-
-            <div class="form-group">
-              <label for="message">Message</label>
-              <textarea id="message" name="message" rows="5" placeholder="Tell me about your project..." required></textarea>
-            </div>
-
-            <button type="submit" class="contact-btn" id="submitBtn">
-              <span class="btn-text">Send Message</span>
-              <span class="btn-loader"></span>
-            </button>
-
-            <div class="form-message" id="formMessage"></div>
-          </form>
-        </div>
-      </section>
+    <div class="profile-image">
+      <img src="assets/me.jpg" alt="Joseph Lukudu" />
     </div>
 
-    <script src="projects.js"></script>
-    <script src="contact.js"></script>
-  </body>
+    <div class="my-des">
+      <h2 class="user-name">Joseph Lukudu</h2>
+      <p class="job-title">Aspiring Fullstack Developer</p>
+    </div>
+
+    <div class="bio">
+      <p>
+        Hi, my name is Joseph. I'm learning web development and building
+        projects step by step. Currently focused on React and JavaScript.
+      </p>
+    </div>
+
+    <div class="hobbies">
+      <h4>HOBBIES</h4>
+      <div class="hobbi">
+        <span class="hobby-pill">Coding</span>
+        <span class="hobby-pill">Reading</span>
+        <span class="hobby-pill">Basketball</span>
+      </div>
+    </div>
+
+
+    <!-- REQUIREMENT 2: Projects Section with Filters -->
+    <div class="projects-section">
+      <h4>PROJECTS I'VE BUILT</h4>
+    
+      <div class="project-filters">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="Pure HTML & CSS">HTML & CSS</button>
+        <button class="filter-btn" data-filter="HTML CSS & JS">HTML CSS & JS</button>
+        <button class="filter-btn" data-filter="React">React</button>
+      </div>
+    
+      <div id="projectsList">
+        <!-- Projects injected by JS -->
+      </div>
+    </div>
+    <!-- BONUS -->
+    <div class="hire-me-wrapper">
+      <button id="hireMeBtn" class="hire-me-btn">
+        <i class="fa-solid fa-hand"></i> Say Hello
+      </button>
+      <div id="hireMeText" class="hire-me-text">
+        <p>Hey, I'm available for work!</p>
+        <a href="https://wa.me/256773409907?text=Hi%20Joseph,%20I%20saw%20your%20profile!" target="_blank"
+          class="hire-me-cta">
+          <i class="fab fa-whatsapp"></i> WhatsApp Me
+        </a>
+      </div>
+    </div>
+
+    <div class="social-links">
+      <a href="https://github.com/joseph-kudus" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+      <a href="https://linkedin.com/in/yourprofile" target="_blank" aria-label="LinkedIn"><i
+          class="fab fa-linkedin"></i></a>
+      <a href="mailto:josephlukudu22@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+    </div>
+  </div>
+
+  <script src="projects.js"></script>
+</body>
+
 </html>
