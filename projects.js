@@ -9,29 +9,29 @@ const projects = [
     code: "https://github.com/yourusername/devx", // replace with your repo
   },
   {
-    title: "CryptoProject",
+    title: "Crypto Project",
     desc: "Crypto exchange dashboard with real-time prices, portfolio tracking, and trading charts using CoinGecko API.",
     img: "assets/projects/crypto.png",
-    tags: ["web", "api"],
-    tech: ["JavaScript", "Chart.js", "API"],
-    live: "https://joseph-cryptoz-project.netlify.app/", 
-    code: "https://github.com/yourusername/cryptoproject", 
+    tags: ["web"],
+    tech: ["HTML", "CSS", "JavaScript"],
+    live: "https://joseph-cryptoz-project.netlify.app/",
+    code: "https://github.com/yourusername/cryptoproject",
   },
   {
     title: "Expenses Tracker",
     desc: "Personal finance app to track income/expenses. Category filters, monthly reports, and data export to CSV.",
     img: "assets/projects/expenses.png",
     tags: ["web"],
-    tech: ["HTML", "CSS", "JavaScript", "LocalStorage"],
+    tech: ["HTML", "CSS", "JavaScript"],
     live: "https://expenses-demo.com", // replace
     code: "https://github.com/yourusername/expenses-tracker", // replace
   },
   {
     title: "Learning Management System",
     desc: "Full LMS for courses, quizzes, and student progress. Admin dashboard, auth, and video streaming support.",
-    img: "assets/projects/lms.png",
+    img: "images/learnflow.png",
     tags: ["web"],
-    tech: ["PHP", "MySQL", "Bootstrap"],
+    tech: ["React", "Node.js"],
     live: "https://jllearnflow.netlify.app/#/Landing", // leave blank if no live demo
     code: "https://github.com/yourusername/lms", // replace
   },

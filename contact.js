@@ -2,7 +2,7 @@ const contactForm = document.getElementById("contactForm");
 const submitBtn = document.getElementById("submitBtn");
 const formMessage = document.getElementById("formMessage");
 
-// REPLACE THIS WITH YOUR FORMSPREE URL
+
 const FORMSPREE_URL = "https://formspree.io/f/xpzgkqdo";
 
 contactForm.addEventListener("submit", async (e) => {
