@@ -2,7 +2,7 @@ const projects = [
   {
     title: "DevX Project",
     desc: "Developer tools platform with code snippets, API testing, and team collaboration. Built for productivity.",
-    img: "assets/projects/devx.png",
+    img: "/image/s",
     tags: ["HTML", "CSS"],
     tech: ["React", "Node.js", "MongoDB"],
     live: "https://devx-demo.com",
