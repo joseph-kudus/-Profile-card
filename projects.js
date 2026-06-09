@@ -1,5 +1,7 @@
+// PROJECTS DATA
 const projects = [
   {
+<<<<<<< HEAD
     title: "DevX Project",
     desc: "Developer tools platform with code snippets, API testing, and team collaboration. Built for productivity.",
     img: "/image/s",
@@ -7,89 +9,81 @@ const projects = [
     tech: ["React", "Node.js", "MongoDB"],
     live: "https://devx-demo.com",
     code: "https://github.com/yourusername/devx",
+=======
+    title: "LearnFlow Management System",
+    desc: "Learning system where students track courses and progress.",
+    tags: ["React"],
+    img: "assets/projects/lms.png",
+    live: "https://jllearnflow.netlify.app/#/Landing",
+    code: "https://github.com/joseph-kudus/lms",
+>>>>>>> 40957d5daf7b6948926727b3db9feb7d42b0b823
   },
   {
-    title: "CryptoZ Project",
-    desc: "Crypto exchange dashboard with real-time prices, portfolio tracking, and trading charts using Currency converter API.",
+    title: "CryptoZ Dashboard", 
+    desc: "Crypto exchange dashboard with real-time prices using Currency API.",
+    tags: ["HTML CSS & JS"],
     img: "assets/projects/crypto.png",
-    tags: ["web", "api"],
-    tech: ["HTML", "CSS", "JavaScript", "Currency Converter API"],
     live: "https://joseph-cryptoz-project.netlify.app/",
-    code: "https://github.com/yourusername/cryptoproject",
+    code: null,
   },
   {
     title: "Expenses Tracker",
-    desc: "Personal finance app to track income/expenses. Category filters, monthly reports, and data export to CSV.",
+    desc: "Personal finance app to track income/expenses with CSV export.",
+    tags: ["Pure HTML & CSS"],
     img: "assets/projects/expenses.png",
-    tags: ["web"],
-    tech: ["HTML", "CSS", "JavaScript"],
-    live: "https://expenses-demo.com",
+    live: null,
     code: "https://github.com/yourusername/expenses-tracker",
-  },
-  {
-    title: "Learning Management System",
-    desc: "Full LMS for courses, quizzes, and student progress. Admin dashboard, auth, and video streaming support.",
-    img: "assets/projects/lms.png",
-    tags: ["web"],
-    tech: ["React", "Node Js", "CSS"],
-    live: "https://jllearnflow.netlify.app/#/Landing",
-    code: "https://github.com/yourusername/lms",
   },
 ];
 
 // RENDER PROJECTS
-const projectsGrid = document.getElementById("projectsGrid");
-const filterBtns = document.querySelectorAll(".filter-btn");
-
 function renderProjects(filter = "all") {
-  projectsGrid.innerHTML = "";
+  const projectsList = document.getElementById("projectsList");
+  if (!projectsList) return;
+  
+  projectsList.innerHTML = "";
 
-  const filtered =
-    filter === "all"
-      ? projects
-      : projects.filter((p) => p.tags.includes(filter));
+  const filtered = filter === "all" 
+    ? projects 
+    : projects.filter(p => p.tags.includes(filter));
 
   filtered.forEach((project) => {
-    const card = `
-            <div class="project-card" data-category="${project.tags.join(" ")}">
-                <img src="${project.img}" alt="${project.title}" class="project-img" onerror="this.src='https://via.placeholder.com/400x200/D0DBFF/2752E7?text=${project.title.replace(/ /g, "+")}'">
-                <div class="project-content">
-                    <div class="project-tags">
-                        ${project.tech.map((t) => `<span class="tag">${t}</span>`).join("")}
-                    </div>
-                    <h3 class="project-title">${project.title}</h3>
-                    <p class="project-desc">${project.desc}</p>
-                    <div class="project-links">
-                        ${project.live ? `<a href="${project.live}" target="_blank" class="project-btn btn-live">Live Demo</a>` : ""}
-                        ${project.code ? `<a href="${project.code}" target="_blank" class="project-btn btn-code"><i class="fab fa-github"></i> Code</a>` : ""}
-                    </div>
-                </div>
-            </div>
-        `;
-    projectsGrid.insertAdjacentHTML("beforeend", card);
+    const projectHTML = `
+      <div class="project-item">
+        <img src="${project.img}" alt="${project.title}" class="project-img" onerror="this.src='https://via.placeholder.com/300x120/D0DBFF/2752E7?text=${project.title.replace(/ /g, '+')}'">
+        <h5>${project.title}</h5>
+        <div class="project-tags">
+          ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join("")}
+        </div>
+        <p>${project.desc}</p>
+        <div class="project-links">
+          ${project.live ? `<a href="${project.live}" target="_blank">Live Demo</a>` : ""}
+          ${project.code ? `<a href="${project.code}" target="_blank">GitHub</a>` : ""}
+        </div>
+      </div>
+    `;
+    projectsList.insertAdjacentHTML("beforeend", projectHTML);
   });
 }
 
-// FILTER LOGIC
-filterBtns.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    filterBtns.forEach((b) => b.classList.remove("active"));
-    btn.classList.add("active");
-    renderProjects(btn.dataset.filter);
+// FILTER BUTTONS
+document.addEventListener("DOMContentLoaded", () => {
+  renderProjects();
+  
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      renderProjects(btn.dataset.filter);
+    });
   });
 });
-
-// INITIAL LOAD
-document.addEventListener("DOMContentLoaded", () => renderProjects());
-
-
 
 // THEME TOGGLE
 const themeToggle = document.getElementById('themeToggle');
 const profileCard = document.querySelector('.profile-card');
 const themeIcon = themeToggle.querySelector('i');
 
-// Check for saved theme preference or default to light
 const currentTheme = localStorage.getItem('theme') || 'light';
 if (currentTheme === 'dark') {
     profileCard.classList.add('dark-mode');
@@ -99,7 +93,6 @@ if (currentTheme === 'dark') {
 themeToggle.addEventListener('click', () => {
     profileCard.classList.toggle('dark-mode');
     
-    // Update icon
     if (profileCard.classList.contains('dark-mode')) {
         themeIcon.classList.replace('fa-moon', 'fa-sun');
         localStorage.setItem('theme', 'dark');
@@ -108,3 +101,19 @@ themeToggle.addEventListener('click', () => {
         localStorage.setItem('theme', 'light');
     }
 });
+
+// HIRE ME TOGGLE
+const hireMeBtn = document.getElementById('hireMeBtn');
+const hireMeText = document.getElementById('hireMeText');
+
+if (hireMeBtn && hireMeText) {
+    hireMeBtn.addEventListener('click', () => {
+        hireMeText.classList.toggle('active');
+        
+        if (hireMeText.classList.contains('active')) {
+            hireMeBtn.innerHTML = '<i class="fas fa-times"></i> Close';
+        } else {
+            hireMeBtn.innerHTML = '<i class="fas fa-briefcase"></i> Hire Me';
+        }
+    });
+}
