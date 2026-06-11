@@ -3,16 +3,16 @@ const projects = [
     title: "DevX Project",
     desc: "Developer tools platform with code snippets, API testing, and team collaboration. Built for productivity.",
     img: "assets/projects/devx.png",
-    tags: ["web", "api"],
-    tech: ["React", "Node.js", "MongoDB"],
+    tags: ["beginer"],
+    tech: ["Html", "CSS"],
     live: "https://devx-demo.com", // replace with your link
     code: "https://github.com/yourusername/devx", // replace with your repo
   },
   {
-    title: "Crypto Project",
+    title: "CryptoZ Project",
     desc: "Crypto exchange dashboard with real-time prices, portfolio tracking, and trading charts using CoinGecko API.",
     img: "assets/projects/crypto.png",
-    tags: ["web"],
+    tags: ["intermediate"],
     tech: ["HTML", "CSS", "JavaScript"],
     live: "https://joseph-cryptoz-project.netlify.app/",
     code: "https://github.com/yourusername/cryptoproject",
@@ -21,19 +21,27 @@ const projects = [
     title: "Expenses Tracker",
     desc: "Personal finance app to track income/expenses. Category filters, monthly reports, and data export to CSV.",
     img: "assets/projects/expenses.png",
-    tags: ["web"],
+    tags: ["intermediate"],
     tech: ["HTML", "CSS", "JavaScript"],
-    live: "https://expenses-demo.com", // replace
+    live: "https://expense-tracker-appplication.netlify.app/", // replace
     code: "https://github.com/yourusername/expenses-tracker", // replace
   },
   {
+    title: "Chat Application",
+    desc: "",
+    img: "",
+    tags: ["advance"],
+    tech: ["HTML", "CSS", "JavaScript", "ReactJS"],
+    live: "https://kuduschat.netlify.app",
+  },
+  {
     title: "Learning Management System",
-    desc: "Full LMS for courses, quizzes, and student progress. Admin dashboard, auth, and video streaming support.",
+    desc: "Full LMS for courses, quizzes, and student progress. Admin dashboard, auth, and video streaming  support.",
     img: "images/learnflow.png",
-    tags: ["web"],
+    tags: ["advance"],
     tech: ["React", "Node.js"],
-    live: "https://jllearnflow.netlify.app/#/Landing", // leave blank if no live demo
-    code: "https://github.com/yourusername/lms", // replace
+    live: "https://jllearnflow.netlify.app/#/Landing",
+    code: "https://github.com/yourusername/lms",
   },
 ];
 
@@ -82,29 +90,27 @@ filterBtns.forEach((btn) => {
 // INITIAL LOAD
 document.addEventListener("DOMContentLoaded", () => renderProjects());
 
-
-
 // THEME TOGGLE
-const themeToggle = document.getElementById('themeToggle');
-const profileCard = document.querySelector('.profile-card');
-const themeIcon = themeToggle.querySelector('i');
+const themeToggle = document.getElementById("themeToggle");
+const profileCard = document.querySelector(".profile-card");
+const themeIcon = themeToggle.querySelector("i");
 
 // Check for saved theme preference or default to light
-const currentTheme = localStorage.getItem('theme') || 'light';
-if (currentTheme === 'dark') {
-    profileCard.classList.add('dark-mode');
-    themeIcon.classList.replace('fa-moon', 'fa-sun');
+const currentTheme = localStorage.getItem("theme") || "light";
+if (currentTheme === "dark") {
+  profileCard.classList.add("dark-mode");
+  themeIcon.classList.replace("fa-moon", "fa-sun");
 }
 
-themeToggle.addEventListener('click', () => {
-    profileCard.classList.toggle('dark-mode');
-    
-    // Update icon
-    if (profileCard.classList.contains('dark-mode')) {
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        themeIcon.classList.replace('fa-sun', 'fa-moon');
-        localStorage.setItem('theme', 'light');
-    }
+themeToggle.addEventListener("click", () => {
+  profileCard.classList.toggle("dark-mode");
+
+  // Update icon
+  if (profileCard.classList.contains("dark-mode")) {
+    themeIcon.classList.replace("fa-moon", "fa-sun");
+    localStorage.setItem("theme", "dark");
+  } else {
+    themeIcon.classList.replace("fa-sun", "fa-moon");
+    localStorage.setItem("theme", "light");
+  }
 });
